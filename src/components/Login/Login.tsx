@@ -55,7 +55,7 @@ const passwordReducer = (
 };
 
 interface LoginProps {
-  onLogin: (email: string, password: string) => {};
+  onLogin?: (email: string, password: string) => void;
 }
 
 const initValue = { value: "", isValid: null };
@@ -138,7 +138,7 @@ const Login: FC<LoginProps> = (props) => {
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
-    props.onLogin(emailState.value, passwordState.value);
+    props.onLogin && props.onLogin(emailState.value, passwordState.value);
   };
 
   return (

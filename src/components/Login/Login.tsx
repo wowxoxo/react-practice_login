@@ -175,11 +175,7 @@ const Login: FC<LoginProps> = (props) => {
           onBlur={validatePasswordHandler}
         />
         <div className={classes.actions}>
-          <Button
-            type="submit"
-            className={classes.btn}
-            disabledy={!formIsValid}
-          >
+          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
           </Button>
         </div>
